@@ -52,3 +52,12 @@ C:\Users\user\Desktop\calisma\iskambilOyun\obj\Debug\iskambilOyun.Properties.Res
 C:\Users\user\Desktop\calisma\iskambilOyun\obj\Debug\iskambilOyun.csproj.GenerateResource.Cache
 C:\Users\user\Desktop\calisma\iskambilOyun\obj\Debug\iskambilOyun.exe
 C:\Users\user\Desktop\calisma\iskambilOyun\obj\Debug\iskambilOyun.pdb
+C:\Users\mkostek\Desktop\calisma-aslar\iskambilOyun\bin\Debug\iskambilOyun.exe.config
+C:\Users\mkostek\Desktop\calisma-aslar\iskambilOyun\bin\Debug\iskambilOyun.exe
+C:\Users\mkostek\Desktop\calisma-aslar\iskambilOyun\bin\Debug\iskambilOyun.pdb
+C:\Users\mkostek\Desktop\calisma-aslar\iskambilOyun\obj\Debug\iskambilOyun.csprojResolveAssemblyReference.cache
+C:\Users\mkostek\Desktop\calisma-aslar\iskambilOyun\obj\Debug\iskambilOyun.Form1.resources
+C:\Users\mkostek\Desktop\calisma-aslar\iskambilOyun\obj\Debug\iskambilOyun.Properties.Resources.resources
+C:\Users\mkostek\Desktop\calisma-aslar\iskambilOyun\obj\Debug\iskambilOyun.csproj.GenerateResource.Cache
+C:\Users\mkostek\Desktop\calisma-aslar\iskambilOyun\obj\Debug\iskambilOyun.exe
+C:\Users\mkostek\Desktop\calisma-aslar\iskambilOyun\obj\Debug\iskambilOyun.pdb

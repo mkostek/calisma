@@ -216,6 +216,9 @@ namespace iskambilOyun
 				}else{//değilse herhangi bir kart ile oyuna giriş yapılabilir
 					r=true;//çıktıysa koza izin ver
 				}
+				if(oyunEl[p]%13==0)
+					ilk.deger=en.deger=13;
+				else
 				ilk.deger=en.deger=oyunEl[p]%13;
 				ilk.tip=en.tip=karttip(oyunEl[p]);
 				
@@ -292,7 +295,11 @@ namespace iskambilOyun
 				{
 					if(buyukvar(i))//atan elemanın tuttuğu kartlarda yerden halihazırda büyükse
 					{
-						if(oyunEl[i]%13>en.deger)//attığı kart küçükse
+						if(oyunEl[i]%13==0){
+							en.deger=13;
+							t=true;
+						}
+						else if(oyunEl[i]%13>en.deger)//attığı kart küçükse
 						{
 							t=true;
 							en.deger=oyunEl[i]%13;//en büyüğe ata
@@ -366,10 +373,19 @@ namespace iskambilOyun
 			}
 			for(int j=a[0];j<a[1];j++)
 			{
-				if(en.tip==karttip((int)oyunEl[j]) && en.deger<oyunEl[j]%13)
+				if(en.tip==karttip((int)oyunEl[j]))
 				{
-					t=true;break;
+					if(0==oyunEl[j]%13)
+					{
+						t=true;break;
+					}
+					// disable once RedundantIfElseBlock
+					else if(en.deger<oyunEl[j]%13)
+					{
+						t=true;break;
+					}
 				}
+				
 			}
 
 			return t;
@@ -387,14 +403,21 @@ namespace iskambilOyun
 			{
 				if(buyukvar(l))
 				{
-					if(en.deger<oyunEl[l]%13){
-						//	if(c.koz==karttip(oyunEl[l]))ciktimi=true;
-						en.deger=oyunEl[l]%13;
-						//en.tip=karttip(oyunEl[l]);
+					if(oyunEl[l]%13==0)
+					{
+						en.deger=13;
 						o=true;
 					}
+						
+					else if(en.deger<oyunEl[l]%13)
+					{
+						en.deger=oyunEl[l]%13;
+						o=true;
+					}
+						//en.tip=karttip(oyunEl[l]);
 					
-				}else o=true;//büyük yoksada bu kart tipini al
+				}
+				else o=true;//büyük yoksada bu kart tipini al
 			}
 			
 			if(o==false && !elseri(l)){
@@ -408,8 +431,9 @@ namespace iskambilOyun
 						ciktimi=true;
 						o=true;
 					}else{
-						if(en.deger<oyunEl[l]%13){
-							//	if(c.koz==karttip(oyunEl[l]))ciktimi=true;
+						if(oyunEl[l]%13==0)
+							en.deger=13;
+						else{
 							en.deger=oyunEl[l]%13;
 							en.tip=karttip(oyunEl[l]);
 							o=true;
@@ -431,23 +455,39 @@ namespace iskambilOyun
 			{
 				for(int i=0;i<4;i++)
 				{
-					if(c.koz==karttip((int)atilan[i])&& enbuyuk<(int)atilan[i]%13)
+					if(c.koz==karttip((int)atilan[i]) )
 					{
-						enbuyuk=(int)atilan[i]%13;
-						donder=i;
+						if((int)atilan[i]%13==0){
+							enbuyuk=13;
+							donder=i;
+						}
+						else if(enbuyuk<(int)atilan[i]%13)
+						{
+							enbuyuk=(int)atilan[i]%13;
+							donder=i;
+						}
+						
 					}
 				}
 			}
 			else{
 				for(int i=0;i<4;i++)
 				{
-					if(attı==karttip((int)atilan[i])&& enbuyuk<(int)atilan[i]%13)
+					if(attı==karttip((int)atilan[i]))
 					{
-						enbuyuk=(int)atilan[i]%13;
-						donder=i;
+						if((int)atilan[i]%13==0){
+							enbuyuk=13;
+							donder=i;
+						}
+						else if(enbuyuk<(int)atilan[i]%13)
+						{
+							enbuyuk=(int)atilan[i]%13;
+							donder=i;
+						}
 					}
 				}
 			}
+			en.deger=-1;
 			return donder;
 		}
 		#endregion
